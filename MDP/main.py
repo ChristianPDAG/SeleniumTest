@@ -68,7 +68,7 @@ class MotorDePago:
         self.driver.maximize_window()
 
     def ejecucion_motor(self):
-        self.driver.get("http://ing-finan02.eastus.cloudapp.azure.com/AplicacionMDP_BCI/Aspx/MDPSYS/MDPLOGIN.aspx")
+        self.driver.get("http://...")
         self.document.add_heading('Reporte de Automatización', 0)
         range1 = self.hoja['A2:M2'].expand('down').rows
         self.e=1
