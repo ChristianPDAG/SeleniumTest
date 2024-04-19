@@ -20,7 +20,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys, ActionChains
 
 
-class MotorDePago:
+class Motor:
     txt_username = '//*[@id="txtUser"]'
     txt_password = '//*[@id="txtPassword"]'
     txt_rut_ingresar = '//*[@id="ctl00_ContenedorPrimario_txtRut"]'
@@ -78,7 +78,7 @@ class MotorDePago:
             try:
                 self.iniciar_sesion_ingresador(i) #INICIA USUARIO INGRESADOR
                 time.sleep(5)
-                if "Sistema Motor de Pagos ver.web" in self.driver.title:
+                if "Sistema " in self.driver.title:
                     self.action_bot.presionar_boton(self.btn_menu_transacciones)
                     time.sleep(3)
                     self.action_bot.presionar_boton(self.btn_menu_ingresar)
@@ -358,7 +358,7 @@ class MotorDePago:
         sys.exit()
 
 if __name__ == '__main__':
-    init_bot = MotorDePago(archivo_xlsx = 'AutomatizacionMotorDePago.xlsx')
+    init_bot = Motor(archivo_xlsx = 'Automatizacion.xlsx')
     try:
         init_bot.ejecucion_motor()
     except ElementClickInterceptedException as e:
